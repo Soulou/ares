@@ -1,0 +1,7 @@
+= simple_form_for @group, html: { class: 'form-horizontal' } do |f|
+  %legend Modifier le groupe
+  = f.input :name, label: 'Nom', required: true
+
+  .form-actions
+    = f.button :submit, "Valider", class: 'btn-primary'
+

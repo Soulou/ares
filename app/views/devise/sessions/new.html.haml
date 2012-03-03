@@ -1,0 +1,14 @@
+%h2 Connexion
+
+= simple_form_for resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-horizontal' } do |f|
+  .inputs
+    = f.input :username, required: true, autofocus: true,
+      label: 'identifiant',
+      hint: 'votre nom suivi de votre année d\'entrée à l\'ENSIIE (ex bertot2010)'
+    = f.input :password, required: true, label: 'mot de passe'
+    = f.input :remember_me, :as => :boolean, label: 'se souvenir de moi' if devise_mapping.rememberable?
+
+  .form-actions
+    = f.button :submit, "Se connecter", :class => 'btn-primary'
+
+= render "links"

@@ -1,0 +1,7 @@
+%h1= @user.name
+
+= render 'form'
+
+%legend Supprimer l'utilisateur
+%p Cette opération est irreversible.
+= button_to 'Supprimer', @user, method: :delete, class: 'btn-danger', confirm: 'sur ?'

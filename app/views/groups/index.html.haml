@@ -1,0 +1,16 @@
+%h1 Groupes
+
+= link_to 'Créer un groupe', new_group_path
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Nom
+      %th
+  %tbody
+    - @groups.each do |group|
+      %tr
+        %td= link_to group.name, group_users_path(group)
+        %td
+          = link_to 'Éditer', edit_group_path(group)
+          = link_to 'Supprimer', group_path(group), method: 'delete', confirm: 'êtes vous sur ?'
