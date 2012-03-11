@@ -1,0 +1,21 @@
+%h1 Utilisateurs
+
+- if @group
+  
+- else
+  = link_to 'Ajouter de nouveaux utilisateurs', new_user_path
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th identifiant
+      %th Groupe primaire
+      %th Nom
+      %th Prénom
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.username, edit_user_path(user)
+        %td= link_to user.group.name, edit_group_path(user.group)
+        %td= user.first_name
+        %td= user.last_name

@@ -1,0 +1,13 @@
+= simple_form_for @user, html: { class: 'form-horizontal' } do |f|
+  %legend Modifier l'utilisateur
+  = f.input :username
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :description
+  = f.input :group_id, label: 'Groupe primaire', collection: Group.all, selected: @user.group_id
+
+  .form-actions
+    = f.button :submit, "Valider", class: 'btn-primary'
