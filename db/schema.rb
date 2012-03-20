@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(:version => 20120303151159) do
     t.string   "first_name",                                      :null => false
     t.string   "last_name",                                       :null => false
     t.string   "encrypted_password",                              :null => false
+    t.integer  "promotion",                                       :null => false
+    t.integer  "start_year",                                      :null => false
     t.integer  "uid_number"
     t.string   "home_directory",                                  :null => false
     t.string   "login_shell",            :default => "/bin/bash"

@@ -8,6 +8,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :last_name, null: false
       t.string :encrypted_password, null: false # LDAP userPassword
 
+      ## User personnal information
+      t.integer  :promotion, null: false
+      t.integer  :start_year, null: false
+
       ## LDAP posixAccount
       t.integer :uid_number, auto_increment: true
       t.string :home_directory, null: false

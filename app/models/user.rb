@@ -11,13 +11,15 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :groups, through: :memberships
 
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :first_name, :description, :last_name, :group_id, :group
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :first_name, :description, :last_name, :group_id, :group, :promotion, :start_year
 
   validates :username, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :group, presence: true
   validates :email, presence: true, uniqueness: true
+  validates :promotion, presence: true
+  validates :start_year, presence: true
 
   def name
     "#{first_name} #{last_name}"
